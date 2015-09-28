@@ -1,0 +1,10 @@
+mysql:
+    image: mysql
+    container_name: mysql
+    environment: 
+        MYSQL_ALLOW_EMPTY_PASSWORD: yes
+    ports:
+        - "3306:3306"
+    dns: 
+        - 172.17.42.1 # docker dns server
+        - 8.8.8.8 # google dns
