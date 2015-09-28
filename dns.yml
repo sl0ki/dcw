@@ -1,0 +1,9 @@
+# main DNS server for workflow
+dns:
+    image: phensley/docker-dns
+    container_name: dns
+    restart: always
+    volumes:
+        - /var/run/docker.sock:/docker.sock
+    ports:
+        - "172.17.42.1:53:53/udp"  # set dns port to docker bridge IP
