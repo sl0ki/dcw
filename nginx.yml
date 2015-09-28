@@ -6,9 +6,9 @@ nginx:
     container_name: nginx
     restart: always
     volumes:
-        - /shared/nginx/config/:/etc/nginx/conf.d/
-        - /shared/nginx/ssl/:/etc/nginx/ssl/
-        - /shared/nginx/www/:/www/
+        - config/:/etc/nginx/conf.d/
+        - ssl/:/etc/nginx/ssl/
+        - www/:/www/
     ports:
         - "80:80"
         # - "443:443"
