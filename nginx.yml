@@ -1,0 +1,17 @@
+# nginx main (80,443 ports) for workflow
+# create ssl,config,www directory
+
+nginx:
+    image: nginx
+    container_name: nginx
+    restart: always
+    volumes:
+        - /shared/nginx/config/:/etc/nginx/conf.d/
+        - /shared/nginx/ssl/:/etc/nginx/ssl/
+        - /shared/nginx/www/:/www/
+    ports:
+        - "80:80"
+        # - "443:443"
+    dns: 
+        - 172.17.42.1 # docker dns server
+        - 8.8.8.8 # google dns
